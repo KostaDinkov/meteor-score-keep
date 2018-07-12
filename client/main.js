@@ -11,7 +11,7 @@ Meteor.startup(() => {
   Tracker.autorun(() => {
     const App = (
       <div>
-        <TitleBar title="Score Keep App"/>  
+        <TitleBar title="Score Keep App" subtitle={"Created by Kosta"}/>  
         <PlayerList />
         <AddPlayer />
         
