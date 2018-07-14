@@ -1,18 +1,31 @@
-import React,{Component,Fragment} from 'react';
-import Players from '../api/players'
+import React, { Component, Fragment } from 'react';
+
 
 import PlayerListItem from './PlayerListItem';
 
-class PlayerList extends Component{
-  render(){
-    const players = Players.find().fetch()
-    return(
-      <Fragment>
-        {players.map(p =>
-          <PlayerListItem key ={p._id} data ={p}/>
-        )}
-      </Fragment>
-    )
+class PlayerList extends Component {
+  render() {
+    const players = this.props.players;
+    if (players.length === 0) {
+      return (
+        <Fragment>
+          <p>Player list is empty.Please add new players.</p>
+          {players.map(p =>
+            <PlayerListItem key={p._id} data={p} />
+          )}
+        </Fragment>
+      )
+    }
+    else {
+      return (
+        <Fragment>
+          {players.map(p =>
+            <PlayerListItem key={p._id} data={p} />
+          )}
+        </Fragment>)
+    }
+
+
   }
 }
 

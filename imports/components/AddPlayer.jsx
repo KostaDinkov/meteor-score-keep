@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Players from './../api/players'
 
 class AddPlayer extends Component {
 
