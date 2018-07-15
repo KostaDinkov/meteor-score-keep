@@ -1,4 +1,4 @@
-import React, { Component, Fragment} from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 class TitleBar extends Component {
@@ -15,10 +15,13 @@ class TitleBar extends Component {
     const title = this.props.title;
     const subtitle = this.props.subtitle;
     return (
-      <Fragment>
-        <h1>{title}</h1>
-        <h2>{subtitle}</h2>
-      </Fragment>
+      <div className="title-bar">
+        <div className="wrapper">
+          <h1>{title}</h1>
+          <h2>{subtitle}</h2>
+        </div>
+
+      </div>
 
     )
   }

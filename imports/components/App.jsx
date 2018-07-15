@@ -6,7 +6,9 @@ import Players from '../api/players'
 
 class App extends Component {
   render() {
-    const players = Players.find().fetch();
+    const players = Players.find({},{
+      sort:{score:-1}
+    }).fetch();
     return (
         <div>
           <TitleBar title="Score Keep App" subtitle={"Created by Kosta"}/>  
