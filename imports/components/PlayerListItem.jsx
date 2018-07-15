@@ -1,19 +1,23 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 class PlayerListItem extends Component {
   render() {
-    const id = this.props.data._id;
-    const name = this.props.data.name;
-    const score = this.props.data.score;
+    const id = this.props.player._id;
+    const name = this.props.player.name;
+    const score = this.props.player.score;
+    const rank = this.props.player.rank;
+    const position = this.props.player.position;
+
+    let itemClassName = `item item--position-${rank}`;
     return (
-      <div className='item'>
+      <div className={itemClassName}>
         <div className='player'>
           <div>
             <h3 className='player__name'>
               {name}
             </h3>
             <p className='player__stats'>
-              {score} point(s).
+              {position} place - {score} point(s).
           </p>
           </div>
           <div className='player_actions'>
