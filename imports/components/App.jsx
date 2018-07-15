@@ -6,15 +6,17 @@ import Players from '../api/players'
 
 class App extends Component {
   render() {
-    const players = Players.find({},{
-      sort:{score:-1}
+    const players = Players.find({}, {
+      sort: { score: -1 }
     }).fetch();
     return (
-        <div>
-          <TitleBar title="Score Keep App" subtitle={"Created by Kosta"}/>  
-          <PlayerList players = {players}/>
+      <div>
+        <TitleBar title="Score Keep App" subtitle={"Created by Kosta"} />
+        <div className='wrapper'>
+          <PlayerList players={players} />
           <AddPlayer />
         </div>
+      </div>
     );
   }
 }

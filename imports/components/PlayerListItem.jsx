@@ -6,14 +6,23 @@ class PlayerListItem extends Component {
     const name = this.props.data.name;
     const score = this.props.data.score;
     return (
-      <Fragment>
-        <p>
-          {name} has {score} point(s).
-              <button onClick={() => { Players.update(id, { $inc: { score: 1 } }) }}>+</button>
-          <button onClick={() => { Players.update(id, { $inc: { score: -1 } }) }}>-</button>
-          <button onClick={() => Players.remove(id)}>X</button>
-        </p>
-      </Fragment>
+      <div className='item'>
+        <div className='player'>
+          <div>
+            <h3 className='player__name'>
+              {name}
+            </h3>
+            <p className='player__stats'>
+              {score} point(s).
+          </p>
+          </div>
+          <div className='player_actions'>
+            <button className='button button--round' onClick={() => { Players.update(id, { $inc: { score: 1 } }) }}>+</button>
+            <button className='button button--round' onClick={() => { Players.update(id, { $inc: { score: -1 } }) }}>-</button>
+            <button className='button button--round' onClick={() => Players.remove(id)}>X</button>
+          </div>
+        </div>
+      </div>
     );
   }
 }

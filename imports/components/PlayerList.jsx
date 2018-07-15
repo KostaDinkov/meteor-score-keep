@@ -8,19 +8,17 @@ class PlayerList extends Component {
     const players = this.props.players;
     if (players.length === 0) {
       return (
-        <Fragment>
-          <p>Player list is empty.Please add new players.</p>
-          {players.map(p =>
-            <PlayerListItem key={p._id} data={p} />
-          )}
-        </Fragment>
+        <div className='item'>
+          <p className='item__message'>Player list is empty.Please add new players.</p>
+          
+        </div>
       )
     }
     else {
       return (
         <Fragment>
           {players.map(p =>
-            <PlayerListItem key={p._id} data={p} />
+            <PlayerListItem key={p._id} data={p}/>
           )}
         </Fragment>)
     }
